@@ -25,7 +25,7 @@ import com.google.common.base.Optional;
  * Enum representing the states of an observation with regard to sensitive information.
  */
 public enum Marking {
-  CONTROLLED, OPEN, MASKED;
+  CONTROLLED, OPEN, MASKED, NONMATCHED;
 
   /**
    * Returns the value to be used in the context of a tuple (to avoid serialization issues).
@@ -44,6 +44,10 @@ public enum Marking {
 
   public boolean isMasked() {
     return this == MASKED;
+  }
+
+  public boolean isNonmatched() {
+    return this == NONMATCHED;
   }
 
   /**
